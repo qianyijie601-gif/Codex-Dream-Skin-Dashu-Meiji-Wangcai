@@ -6,9 +6,13 @@ $Root = Split-Path -Parent $PSScriptRoot
 . (Join-Path $Root 'scripts\common-windows.ps1')
 
 $injectorSource = Get-Content -LiteralPath (Join-Path $Root 'scripts\injector.mjs') -Raw
+$skinCss = Get-Content -LiteralPath (Join-Path $Root 'assets\dream-skin.css') -Raw
 if ($injectorSource -notmatch 'animatedMemeCounts = \{ dashu: 80, meiji: 48, wangcai: 9 \}' -or
     $injectorSource -notmatch 'mime: "image/gif"') {
   throw 'Injector does not load the official animated sticker pool as GIF data.'
+}
+if (-not $skinCss.Contains('height: 42px;') -or -not $skinCss.Contains('width: 38px;')) {
+  throw 'Character duty switcher did not keep the enlarged touch target.'
 }
 
 $temporaryRoot = Join-Path ([System.IO.Path]::GetTempPath()) "codex-dream-skin-tests-$PID-$([guid]::NewGuid().ToString('N'))"

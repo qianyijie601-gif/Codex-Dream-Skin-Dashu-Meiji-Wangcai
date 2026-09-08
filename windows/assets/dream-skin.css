@@ -2729,11 +2729,11 @@ html.codex-dream-skin.dream-settings-page
   z-index: 12;
   top: 5px;
   right: 330px;
-  height: 34px;
+  height: 42px;
   display: flex;
   align-items: center;
-  gap: 5px;
-  padding: 3px 6px;
+  gap: 6px;
+  padding: 3px 7px;
   border: 1px solid rgba(94, 82, 64, .14);
   border-radius: 8px;
   background: rgba(255, 250, 240, .90);
@@ -2746,13 +2746,13 @@ html.codex-dream-skin.dream-settings-page
 
 #codex-dream-skin-chrome .dream-character-switcher > span {
   color: #766a59;
-  font: 700 10px/1 "Microsoft YaHei UI", sans-serif;
+  font: 700 11px/1 "Microsoft YaHei UI", sans-serif;
   white-space: nowrap;
 }
 
 #codex-dream-skin-chrome .dream-character-switcher button {
-  width: 31px;
-  height: 31px;
+  width: 38px;
+  height: 38px;
   padding: 0;
   border: 1px solid rgba(94, 82, 64, .12);
   border-radius: 50%;

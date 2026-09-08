@@ -267,12 +267,19 @@ async function connectBrowserIdentityAnchor(port, expectedBrowserId) {
 }
 
 async function loadPayload() {
-  const memeFiles = ["dashu", "meiji", "wangcai"].flatMap((character) => (
-    Array.from({ length: 20 }, (_, index) => ({
+  const animatedMemeCounts = { dashu: 80, meiji: 48, wangcai: 9 };
+  const memeFiles = ["dashu", "meiji", "wangcai"].flatMap((character) => [
+    ...Array.from({ length: 20 }, (_, index) => ({
       key: `${character}-${index}`,
       path: path.join(root, "assets", "memes", character, `${character}-${String(index).padStart(2, "0")}.png`),
-    }))
-  ));
+      mime: "image/png",
+    })),
+    ...Array.from({ length: animatedMemeCounts[character] }, (_, index) => ({
+      key: `${character}-${index + 20}`,
+      path: path.join(root, "assets", "memes", character, `${character}-${index + 20}.gif`),
+      mime: "image/gif",
+    })),
+  ]);
   const [
     cssSource,
     template,
@@ -298,8 +305,10 @@ async function loadPayload() {
     fs.readFile(path.join(root, "assets", "suggestion-sticker-4.png")),
     Promise.all(memeFiles.map((file) => fs.readFile(file.path))),
   ]);
-  const imageDataUrl = (buffer) => `data:image/png;base64,${buffer.toString("base64")}`;
-  const memeUrls = Object.fromEntries(memeFiles.map((file, index) => [file.key, imageDataUrl(memeBuffers[index])]));
+  const imageDataUrl = (buffer, mime = "image/png") => `data:${mime};base64,${buffer.toString("base64")}`;
+  const memeUrls = Object.fromEntries(
+    memeFiles.map((file, index) => [file.key, imageDataUrl(memeBuffers[index], file.mime)]),
+  );
   const css = cssSource
     .replaceAll("__DREAM_AVATAR_DASHU__", imageDataUrl(dashuAvatar))
     .replaceAll("__DREAM_AVATAR_MEIJI__", imageDataUrl(meijiAvatar))

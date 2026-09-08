@@ -9,6 +9,33 @@
     "path": "official-motion/author-opus-956647258743373847",
     "usage": "作者公开发布的原始 GIF，仅作非商业主题动作参考与原帧展示。"
   },
+  "wechatFavorites": {
+    "source": "微信表情开放平台：美叽和大鼠 / 大鼠和旺财 动态",
+    "count": 8,
+    "path": "memes/{dashu,meiji,wangcai}/*-20.gif 及更高编号",
+    "characters": {
+      "dashu": 2,
+      "meiji": 3,
+      "wangcai": 3
+    },
+    "usage": "由用户本人收藏的官方表情原文件，仅用于个人非商业主题；分享时请注明作者。"
+  },
+  "officialStickerMirrors": {
+    "collection": "https://www.sigstick.com/collection/Y35zcVEX4UImevIp8jD5",
+    "packIds": [
+      "CVqql1WRRzJWRE5CXySk",
+      "5E9BvxKl5cH1BgykPcYO",
+      "VOmVAEBoxDIDmg7UxUyr",
+      "YrVrmEhOjAqcu3NRx2wk",
+      "QaGCpJQsAin4G8sxEeMw",
+      "h9EXhKLSpqbznFzk5uDf",
+      "ATBnZA8DmMSy0GwH77MZ",
+      "H25CRZcKOM0lFREXtUNK",
+      "VsZPf56L9lzhSnG7Pvjn"
+    ],
+    "uniqueAnimatedCount": 130,
+    "usage": "第三方镜像保存的作者原创动态表情，仅用于个人非商业主题；分享时请注明作者。"
+  },
   "characters": {
     "dashu": {
       "count": 20,

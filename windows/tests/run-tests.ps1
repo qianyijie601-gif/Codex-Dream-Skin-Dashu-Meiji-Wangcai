@@ -5,6 +5,12 @@ $ErrorActionPreference = 'Stop'
 $Root = Split-Path -Parent $PSScriptRoot
 . (Join-Path $Root 'scripts\common-windows.ps1')
 
+$injectorSource = Get-Content -LiteralPath (Join-Path $Root 'scripts\injector.mjs') -Raw
+if ($injectorSource -notmatch 'animatedMemeCounts = \{ dashu: 80, meiji: 48, wangcai: 9 \}' -or
+    $injectorSource -notmatch 'mime: "image/gif"') {
+  throw 'Injector does not load the official animated sticker pool as GIF data.'
+}
+
 $temporaryRoot = Join-Path ([System.IO.Path]::GetTempPath()) "codex-dream-skin-tests-$PID-$([guid]::NewGuid().ToString('N'))"
 New-Item -ItemType Directory -Path $temporaryRoot | Out-Null
 

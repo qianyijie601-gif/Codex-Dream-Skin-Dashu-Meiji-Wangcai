@@ -384,9 +384,9 @@
 
   const characterFromIndex = (index) => ["dashu", "meiji", "wangcai"][index % 3];
   const petPoseIndexes = {
-    dashu: { idle: 6, running: 11, review: 7 },
-    meiji: { idle: 6, running: 11, review: 7 },
-    wangcai: { idle: 6, running: 10, review: 7 },
+    dashu: { idle: 21, running: 20, review: 7 },
+    meiji: { idle: 20, running: 21, review: 22 },
+    wangcai: { idle: 21, running: 20, review: 22 },
   };
 
   const activeCharacter = () => {
@@ -400,7 +400,7 @@
     return matching[index % Math.max(matching.length, 1)] || items[index % items.length];
   };
 
-  const memePoolSizes = { dashu: 20, meiji: 20, wangcai: 20 };
+  const memePoolSizes = { dashu: 100, meiji: 68, wangcai: 29 };
   const nextMeme = (character) => {
     const count = memePoolSizes[character] || 0;
     if (count === 0) return "";

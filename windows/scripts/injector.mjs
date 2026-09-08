@@ -267,7 +267,7 @@ async function connectBrowserIdentityAnchor(port, expectedBrowserId) {
 }
 
 async function loadPayload() {
-  const animatedMemeCounts = { dashu: 80, meiji: 48, wangcai: 9 };
+  const animatedMemeCounts = { dashu: 80, meiji: 49, wangcai: 9 };
   const memeFiles = ["dashu", "meiji", "wangcai"].flatMap((character) => [
     ...Array.from({ length: 20 }, (_, index) => ({
       key: `${character}-${index}`,

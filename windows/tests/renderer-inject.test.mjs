@@ -19,7 +19,8 @@ assert.match(template, /dream-completion-stamp/);
 assert.match(template, /dream-daily-memo/);
 assert.match(template, /dream-pet-dock/);
 assert.match(template, /phraseState\.relayIndex/);
-assert.match(template, /memePoolSizes = \{ dashu: 100, meiji: 68, wangcai: 29 \}/);
+assert.match(template, /memePoolSizes = \{ dashu: 100, meiji: 69, wangcai: 29 \}/);
+assert.match(template, /meiji: \{ idle: 68, running: 21, review: 22 \}/);
 assert.match(template, /wangcai: \{ idle: 21, running: 20, review: 22 \}/);
 
 function createFixture(options) {

@@ -7,7 +7,7 @@ $Root = Split-Path -Parent $PSScriptRoot
 
 $injectorSource = Get-Content -LiteralPath (Join-Path $Root 'scripts\injector.mjs') -Raw
 $skinCss = Get-Content -LiteralPath (Join-Path $Root 'assets\dream-skin.css') -Raw
-if ($injectorSource -notmatch 'animatedMemeCounts = \{ dashu: 80, meiji: 49, wangcai: 9 \}' -or
+if ($injectorSource -notmatch 'animatedMemeCounts = \{ dashu: 80, meiji: 48, wangcai: 9 \}' -or
     $injectorSource -notmatch 'mime: "image/gif"') {
   throw 'Injector does not load the official animated sticker pool as GIF data.'
 }
